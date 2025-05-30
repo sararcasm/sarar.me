@@ -2388,6 +2388,19 @@ input, select, textarea {
 		padding-bottom: 3em;
 	}
 
+	/* Two icons */
+
+		#two .icons {
+		    text-align: center;
+		}
+
+		#two .icons a {
+		    font-size: 1.5em;
+		    width: 2.25em;
+		    height: 2.25em;
+		    line-height: 2.25em;
+		}
+
 /* Contact */
 
 	#contact {
