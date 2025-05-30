@@ -26,6 +26,9 @@
 			setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
+
+		// Auto-update copyright year.
+			$('.currentYear').text(new Date().getFullYear());
 		});
 
 	// Touch mode.
