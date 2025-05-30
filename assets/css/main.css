@@ -2247,6 +2247,100 @@ input, select, textarea {
 		background-repeat: repeat, no-repeat;
 	}
 
+	/* Intro Gallery */
+
+		/* Remove original intro background */
+
+		#intro {
+		    background: none;
+		}
+
+		/* Gallery Container */
+
+		#intro .gallery {
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    top: 0;
+		    left: 0;
+		    z-index: -1;
+		}
+
+		/* Overlay */
+
+		#intro .overlay {
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    background: url("images/overlay.png");
+		    background-size: 256px 256px;
+		    background-attachment: fixed;
+		    background-position: top left;
+		    background-repeat: repeat;
+		    z-index: 1;
+		    pointer-events: none;
+		}
+
+		/* Slides */
+
+		#intro .slide {
+		    position: absolute;
+		    width: 100%;
+		    height: 100%;
+		    background-size: cover;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-attachment: fixed;
+		    opacity: 0;
+		    transition: opacity 1s ease;
+		}
+
+		#intro .slide.active {
+		    opacity: 1;
+		}
+
+		/* Individual slide backgrounds */
+
+		#intro .slide1 { background-image: url('../../images/intro.jpg'); }
+		#intro .slide2 { background-image: url('../../images/fulls/01.jpg'); }
+		#intro .slide3 { background-image: url('../../images/fulls/02.jpg'); }
+
+		/* Navigation */
+
+		#intro .galleryNav {
+		    position: absolute;
+		    right: 30px;
+		    top: 50%;
+		    transform: translateY(-50%);
+		    display: flex;
+		    flex-direction: column;
+			align-items: center;
+		    gap: 15px;
+		    z-index: 10;
+		}
+
+			/* Navigation Dots */
+
+			#intro .navDot {
+			    width: 12px;
+			    height: 12px;
+			    border-radius: 50%;
+    			padding: 0;
+    			margin: 0;
+    			display: block; 
+    			flex-shrink: 0;
+			    background: rgba(255,255,255,0.5);
+			    border: none;
+			    cursor: pointer;
+			    transition: all 0.3s ease;
+			}
+
+			#intro .navDot.active,
+			#intro .navDot:hover {
+			    background: rgba(255,255,255,0.9);
+			    transform: scale(1.2);
+			}
+
 /* One */
 
 	#one {
