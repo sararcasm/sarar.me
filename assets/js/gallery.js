@@ -1,42 +1,42 @@
 // Gallery functionality for intro section
 
-const $gallery = $('#intro .gallery');
-const $slides = $('.slide');
-const $dots = $('.navDot');
-const viewCounts = Array($slides.length).fill(0);
-let currentIndex = Math.floor(Math.random() * $slides.length);
-let interval;
-
-// Assign background images in HTML
-$slides.each(function() {
-    const bg = $(this).attr('galleryImage');
-    if (bg) {
-        $(this).css('background-image', `url(${bg})`);
-    }
-});
-
 $(function() {
     const $gallery = $('#intro .gallery');
     const $slides = $('.slide');
     const $dots = $('.navDot');
-    let currentIndex = 0, interval;
+    const viewCounts = Array($slides.length).fill(0);
+    let currentIndex = Math.floor(Math.random() * $slides.length);
+    let interval;
+
+    // Assign background images in HTML
+    $slides.each(function() {
+        const bg = $(this).attr('galleryImage');
+        if (bg) {
+            $(this).css('background-image', `url(${bg})`);
+        }
+    });
 
     function goToSlide(index) {
         $slides.removeClass('active').eq(index).addClass('active');
         $dots.removeClass('active').eq(index).addClass('active');
         currentIndex = index;
+        viewCounts[index]++;
     }
 
-    function getRandomIndexExcluding(excludeIndex) {
-        let newIndex;
-        do {
-            newIndex = Math.floor(Math.random() * $slides.length);
-        } while (newIndex === excludeIndex);
-        return newIndex;
+    // "Fake" random swapping between each gallery image
+    function getNextLeastViewedIndex() {
+        const minViews = Math.min(...viewCounts);
+        const candidates = viewCounts
+            .map((count, index) => (count === minViews && index !== currentIndex ? index : -1))
+            .filter(index => index !== -1);
+        return candidates.length > 0
+            ? candidates[Math.floor(Math.random() * candidates.length)]
+            // Fallback if images are the same
+            : currentIndex;
     }
 
     function nextSlide() {
-        const nextIndex = getRandomIndexExcluding(currentIndex);
+        const nextIndex = getNextLeastViewedIndex();
         goToSlide(nextIndex);
     }
 
@@ -45,13 +45,14 @@ $(function() {
     }
 
     // Initialize
-    goToSlide(0);
+    goToSlide(currentIndex);
     startSlider();
 
     // Dot click handler
     $dots.on('click', function() {
         clearInterval(interval);
-        goToSlide($(this).index());
+        const index = $(this).index();
+        goToSlide(index);
         startSlider();
     });
 
