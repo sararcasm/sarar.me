@@ -1,4 +1,20 @@
 // Gallery functionality for intro section
+
+const $gallery = $('#intro .gallery');
+const $slides = $('.slide');
+const $dots = $('.navDot');
+const viewCounts = Array($slides.length).fill(0);
+let currentIndex = Math.floor(Math.random() * $slides.length);
+let interval;
+
+// Assign background images in HTML
+$slides.each(function() {
+    const bg = $(this).attr('galleryImage');
+    if (bg) {
+        $(this).css('background-image', `url(${bg})`);
+    }
+});
+
 $(function() {
     const $gallery = $('#intro .gallery');
     const $slides = $('.slide');

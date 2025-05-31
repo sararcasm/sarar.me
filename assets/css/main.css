@@ -2294,14 +2294,6 @@ input, select, textarea {
 			    opacity: 1;
 			}
 
-		/* Individual slide backgrounds */
-
-		#intro .slide1 { background-image: url('../../images/intro.jpg'); }
-		#intro .slide2 { background-image: url('../../images/fulls/01.jpg'); }
-		#intro .slide3 { background-image: url('../../images/fulls/02.jpg'); }
-		#intro .slide4 { background-image: url('../../images/one.jpg'); }
-		#intro .slide5 { background-image: url('../../images/two.jpg'); }
-
 		/* Navigation */
 
 		#intro .galleryNav {
