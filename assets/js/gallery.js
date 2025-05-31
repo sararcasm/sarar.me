@@ -11,8 +11,17 @@ $(function() {
         currentIndex = index;
     }
 
+    function getRandomIndexExcluding(excludeIndex) {
+        let newIndex;
+        do {
+            newIndex = Math.floor(Math.random() * $slides.length);
+        } while (newIndex === excludeIndex);
+        return newIndex;
+    }
+
     function nextSlide() {
-        goToSlide((currentIndex + 1) % $slides.length);
+        const nextIndex = getRandomIndexExcluding(currentIndex);
+        goToSlide(nextIndex);
     }
 
     function startSlider() {
@@ -23,13 +32,14 @@ $(function() {
     goToSlide(0);
     startSlider();
 
-    // Event handlers
+    // Dot click handler
     $dots.on('click', function() {
         clearInterval(interval);
         goToSlide($(this).index());
         startSlider();
     });
 
+    // Pause on hover
     $gallery.hover(
         () => clearInterval(interval),
         startSlider
