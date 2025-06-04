@@ -85,36 +85,15 @@
 
 	    $gallery.poptrox({
 	        baseZIndex: 10001,
-	        useBodyOverflow: false,
-	        usePopupEasyClose: true,
+			useBodyOverflow: !browser.mobile,
+			usePopupEasyClose: !(browser.mobile || $body.hasClass('is-touch')),
 	        overlayColor: '#1f2328',
 	        overlayOpacity: 0.85,
 	        usePopupDefaultStyling: false,
-	        usePopupCaption: false,
+			usePopupCaption: true,
 	        popupLoaderText: '',
 	        windowMargin: 50,
 	        usePopupNav: !browser.mobile,
-			
-	        onPopupOpen: function() {
-	            if (browser.mobile || $body.hasClass('is-touch')) {
-	                var $popup = $('.poptrox-popup');
-				
-	                $popup.find('img').css({
-						'max-width': 'none',
-						'width': 'auto',
-						'height': 'auto',
-						'min-width': '100%',
-						'min-height': '100%',
-						'touch-action': 'pan-x pan-y pinch-zoom'
-	                });
-
-					$popup.on('touchmove', function (e) {
-						if (!$(e.target).is('img')) {
-							e.preventDefault();
-						}
-					});
-	            }
-	        }
 	    });
 
 	    breakpoints.on('>small', function() {
