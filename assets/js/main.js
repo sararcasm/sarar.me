@@ -94,6 +94,18 @@
 	        popupLoaderText: '',
 	        windowMargin: 50,
 	        usePopupNav: !browser.mobile,
+
+			onPopupOpen: function () {
+				if (browser.mobile) {
+					$('.poptrox-popup').off('click.open-img').on('click.open-img', 'img', function (e) {
+						e.preventDefault();
+						const src = $(this).attr('src');
+						if (src) {
+							window.location.href = src;
+						}
+					});
+				}
+			}
 	    });
 
 	    breakpoints.on('>small', function() {
