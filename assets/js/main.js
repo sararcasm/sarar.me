@@ -85,12 +85,12 @@
 
 	    $gallery.poptrox({
 	        baseZIndex: 10001,
-			useBodyOverflow: !browser.mobile,
+			useBodyOverflow: !breakpoints.active('<small'),
 			usePopupEasyClose: !(browser.mobile || $body.hasClass('is-touch')),
 	        overlayColor: '#1f2328',
 	        overlayOpacity: 0.85,
 	        usePopupDefaultStyling: false,
-			usePopupCaption: true,
+			usePopupCaption: !breakpoints.active('<small'),
 	        popupLoaderText: '',
 	        windowMargin: 50,
 	        usePopupNav: !browser.mobile,
