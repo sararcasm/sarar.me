@@ -15,11 +15,11 @@ The slideshow will cycle through five images semi-randomly, prioritizing images 
 HTML:
 
 ```html
-<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_1.png></div>
-<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_2.png></div>
-<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_3.png></div>
-<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_4.png></div>
-<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_5.png></div>
+<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_1.png"></div>
+<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_2.png"></div>
+<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_3.png"></div>
+<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_4.png"></div>
+<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_5.png"></div>
 ```
 
 ### Gallery Art
@@ -60,20 +60,14 @@ HTML:
 
 These links can be changed to anything.
 
-Default:
+HTML:
 
 ```html
-<!-- Header -->
-<header id="header">
-	<nav>
-		<ul>
-			<li><a href="#me">About Me</a></li>
-			<li><a href="#art">My Art</a></li>
-			<li><a href="#social">Socials</a></li>
-			<li><a href="#contact">Contact Me</a></li>
-		</ul>
-	</nav>
-</header>
+<li><a href="#me">About Me</a></li>
+<li><a href="#art">My Art</a></li>
+<li><a href="#social">Socials</a></li>
+<li><a href="#contact">Contact Me</a></li>
+<li><a href="https://example.com">External Link</a></li>
 ```
 
 ### Social Media Icons
