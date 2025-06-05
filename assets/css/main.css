@@ -1287,7 +1287,55 @@ input, select, textarea {
 			cursor: default;
 			z-index: 1;
 			font-size: 0.9em;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			box-sizing: border-box;
+			transform: translateY(-2px);
 		}
+
+			/* Caption Text */
+			.poptrox-caption-text {
+				flex-grow: 1;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				margin-right: 10px;
+			}
+
+			/* Caption social icon links */
+			.poptrox-custom-icon-link {
+				font-size: 1.2em;
+				color: #555;
+				text-decoration: none;
+				margin-left: 8px;
+				flex-shrink: 0;
+				display: inline-flex;
+				align-items: center;
+			}
+
+				.poptrox-custom-icon-link:hover {
+					color: #007bff;
+				}
+
+					a.poptrox-custom-icon-link.icon {
+						color: #555;
+						text-decoration: none;
+						margin-left: 8px;
+						flex-shrink: 0;
+						display: inline-block;
+						position: relative;
+					}
+		
+						a.poptrox-custom-icon-link.icon:hover {
+							color: #007bff;
+						}
+			
+			@media screen and (max-width: 736px) {
+				.poptrox-popup .caption {
+					display: none !important;
+				}
+			}
 
 		.poptrox-popup .nav-next,
 		.poptrox-popup .nav-previous {
