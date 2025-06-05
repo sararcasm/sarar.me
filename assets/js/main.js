@@ -146,14 +146,46 @@
 			},
 
 			onPopupOpen: function () {
-				if (browser.mobile) {
-					$('.poptrox-popup').off('click.open-img').on('click.open-img', 'img', function (e) {
-						e.preventDefault();
-						const src = $(this).attr('src');
-						if (src) {
-							window.location.href = src;
+				var $currentPopup = $('.poptrox-popup');
+
+				if (browser.mobile || $body.hasClass('is-touch')) {
+
+					var $caption = $currentPopup.find('.caption');
+					if ($caption.length > 0) {
+						$caption.off('click.poptroxCaptionBg').on('click.poptroxCaptionBg', function (e) {
+							if (e.target === this) {
+								e.stopPropagation();
+							}
+						});
+					}
+
+					var checkImage, attempts = 0;
+					checkImage = setInterval(function () {
+						var $imageInPopup = $currentPopup.find('.pic img');
+
+						if ($imageInPopup.length > 0 && $imageInPopup.attr('src')) {
+							clearInterval(checkImage);
+
+							$imageInPopup.parent().find('.poptrox-mobile-image-overlay').remove();
+							var $overlayText = $('<div class="poptrox-mobile-image-overlay"><span>Tap for full size</span></div>');
+							$imageInPopup.after($overlayText);
+
+							$overlayText.off('click.poptroxOpenFile').on('click.poptroxOpenFile', function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								const src = $(this).siblings('img').attr('src');
+								if (src) {
+									window.open(src, '_blank');
+								}
+							});
 						}
-					});
+						else {
+							attempts++;
+							if (attempts > 30) {
+								clearInterval(checkImage);
+							}
+						}
+					}, 100);
 				}
 			}
 	    });
