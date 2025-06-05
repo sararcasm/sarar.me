@@ -23,13 +23,22 @@ The slideshow will cycle through five images semi-randomly, prioritizing images 
 <div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_5.png"></div>
 ```
 
+#### OPTIONAL: Positioning Slideshow Images
+
+By default, slideshow images center from the **middle** of the image and spread to fill the slideshow container. They might crop themselves in unintended ways. 
+
+To manually change the position of a specific slideshow image, add the `slideshowImagePosition` attribute to the slide's HTML. This will change the image's [`background-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) property.
+
+```html
+<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE.png" slideshowImagePosition="top center"></div>
+<div class="slide" slideshowImage="images/slideshow/ANOTHER_IMAGE.png" slideshowImagePosition="center 25%"></div>
+```
+
 ### Gallery Art
 
 Gallery images thumbnails are auto-cropped from the full image uploaded in `/images/gallery/`. Clicking on these thumbnails will display the full-sized image.
 
 You may upload as many images as you want, but for best results, display an even number of images.
-
-HTML:
 
 ```html
 <article class="from-left">
@@ -43,9 +52,7 @@ HTML:
 
 ### Section Background Images
 
-The 'About Me' and 'Social Media' sections can have background images uploaded in `/images/`.
-
-HTML:
+The 'About Me' and 'Social Media' sections can have background images uploaded in `/images/`. They can optionally be positioned with `data-bg-position`, which modifies the [`background-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) property.
 
 ```html
 <!-- About Me -->
@@ -54,14 +61,12 @@ HTML:
 ...
 
 <!-- Social Media -->
-<section id="me" data-bg="images/YOUR_IMAGE.png">
+<section id="me" data-bg="images/YOUR_IMAGE.png" data-bg-position="top right">
 ```
 
 ### Header Navigation
 
 These links can be changed to anything.
-
-HTML:
 
 ```html
 <li><a href="#me">About Me</a></li>

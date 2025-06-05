@@ -1,6 +1,5 @@
 // Slideshow functionality for intro section
-
-$(function() {
+$(function () {
     const $gallery = $('#intro .slideshow');
     const $slides = $('.slide');
     const $dots = $('.navDot');
@@ -8,11 +7,20 @@ $(function() {
     let currentIndex = Math.floor(Math.random() * $slides.length);
     let interval;
 
-    // Assign background images in HTML
-    $slides.each(function() {
-        const bg = $(this).attr('slideshowImage');
+    // Assign background images and positions in HTML
+    $slides.each(function () {
+        const $thisSlide = $(this);
+
+        // Assign background images in HTML
+        const bg = $thisSlide.attr('slideshowImage');
         if (bg) {
-            $(this).css('background-image', `url(${bg})`);
+            $thisSlide.css('background-image', `url(${bg})`);
+        }
+
+        // Handle background-position from HTML attribute 'slideshowImagePosition'
+        const bgPosAttr = $thisSlide.attr('slideshowImagePosition');
+        if (bgPosAttr) {
+            $thisSlide.css('background-position', bgPosAttr);
         }
     });
 
@@ -48,8 +56,7 @@ $(function() {
     goToSlide(currentIndex);
     startSlider();
 
-    // Dot click handler
-    $dots.on('click', function() {
+    $dots.on('click', function () {
         clearInterval(interval);
         const index = $(this).index();
         goToSlide(index);
