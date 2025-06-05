@@ -121,15 +121,25 @@
 	    });
 	});
 
-	// Get background images from HTML data-bg
+	// Data attributes: Get background images and positions
 	$window.on('load', function () {
 		$('[data-bg]').each(function () {
 			var $this = $(this),
 				bgUrl = $this.attr('data-bg');
 
-			$this.css('background-image', 'url(' + bgUrl + ')');
+			// Set background image
+			if (bgUrl && bgUrl.trim() !== '') {
+				$this.css('background-image', 'url(' + bgUrl + ')');
 
-			$('<img/>').attr('src', bgUrl);
+				// Preload the image
+				$('<img/>').attr('src', bgUrl);
+			}
+
+			// Set background position
+			var bgPosition = $this.attr('data-bg-position'); 
+			if (bgPosition && bgPosition.trim() !== '') { 
+				$this.css('background-position', bgPosition);
+			}
 		});
 	});
 

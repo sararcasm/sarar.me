@@ -40,8 +40,6 @@ Gallery images thumbnails are auto-cropped from the full image uploaded in `/ima
 
 You may upload as many images as you want, but for best results, display an even number of images.
 
-HTML:
-
 ```html
 <article class="from-left">
     <a href="images/gallery/YOUR_IMAGE.png" class="image fit"><img src="images/gallery/YOUR_IMAGE.png" title="This title displays as a caption under the image" alt="Add an alt text description of the image for accessibility" /></a>
@@ -54,9 +52,7 @@ HTML:
 
 ### Section Background Images
 
-The 'About Me' and 'Social Media' sections can have background images uploaded in `/images/`.
-
-HTML:
+The 'About Me' and 'Social Media' sections can have background images uploaded in `/images/`. They can optionally be positioned with `data-bg-position`, which modifies the [`background-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) property.
 
 ```html
 <!-- About Me -->
@@ -65,14 +61,12 @@ HTML:
 ...
 
 <!-- Social Media -->
-<section id="me" data-bg="images/YOUR_IMAGE.png">
+<section id="me" data-bg="images/YOUR_IMAGE.png" data-bg-position="top right">
 ```
 
 ### Header Navigation
 
 These links can be changed to anything.
-
-HTML:
 
 ```html
 <li><a href="#me">About Me</a></li>
