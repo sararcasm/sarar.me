@@ -1492,7 +1492,7 @@ input, select, textarea {
 			opacity: 1.0;
 		}
 
-			/* Optional: Remove dimmed overlay */
+			/* Remove overlay from gallery thumbnails */
 
 			.gallery article .image::before {
 				display: none !important;	
@@ -2422,9 +2422,8 @@ input, select, textarea {
 
 	#me,
 	#social {
-		background: url("images/overlay.png");
 		background-size: cover;
-		background-attachment: fixed, fixed;
+		background-attachment: fixed;
 		background-position: center;
 	}
 
