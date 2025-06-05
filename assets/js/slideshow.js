@@ -1,3 +1,8 @@
+/*
+    Credits:
+        kitbur @ GitHub
+*/
+
 // Slideshow functionality for intro section
 $(function () {
     const $gallery = $('#intro .slideshow');
