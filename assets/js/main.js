@@ -133,6 +133,15 @@
 		});
 	});
 
+	// Auto-sync social icons
+	$(document).ready(function () {
+		const $socialIcons = $('#social .icons').clone();
+		$('#footer .icons').replaceWith($socialIcons);
+
+		// Optional: Add footer-specific class for styling
+		$('#footer .icons').addClass('footer-social');
+	});
+
 	// Section transitions.
 		if (browser.canUse('transition')) {
 
