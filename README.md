@@ -76,6 +76,11 @@ All of the icons you add to this section will automatically populate in the webs
 
 By default, any icon available in Font Awesome Free 5.15.4 should work.
 
+
+### Favicon 
+
+Upload `favicon.ico` to the root directory `/`.
+
 ## Features
 
 - Fullscreen slideshow header with semi-random auto-cycling
