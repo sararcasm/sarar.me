@@ -1,7 +1,7 @@
 /*
-	Big Picture by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Credits:
+		ajlkn @ GitHub
+		kitbur @ GitHub
 */
 
 (function($) {
@@ -80,20 +80,70 @@
 		}
 
 	// Gallery.
-	$window.on('load', function() {
-	    var $gallery = $('.gallery');
+	$window.on('load', function () {
+		var $gallery = $('.gallery');
 
-	    $gallery.poptrox({
-	        baseZIndex: 10001,
+		$gallery.poptrox({
+			baseZIndex: 10001,
 			useBodyOverflow: !breakpoints.active('<small'),
 			usePopupEasyClose: !(browser.mobile || $body.hasClass('is-touch')),
-	        overlayColor: '#1f2328',
-	        overlayOpacity: 0.85,
-	        usePopupDefaultStyling: false,
-			usePopupCaption: !breakpoints.active('<small'),
-	        popupLoaderText: '',
-	        windowMargin: 50,
-	        usePopupNav: !browser.mobile,
+			overlayColor: '#1f2328',
+			overlayOpacity: 0.85,
+			usePopupDefaultStyling: false,
+			usePopupCaption: true,
+			popupLoaderText: '',
+			windowMargin: 50,
+			usePopupNav: !browser.mobile,
+
+			caption: function ($item) {
+				var captionText = $item.find('img').attr('title') || $item.attr('title') || '';
+				var iconsData = $item.data('caption-icons');
+				var iconsArray = null;
+				var allIconsHtml = '';
+
+				if (typeof iconsData === 'string') {
+					try {
+						iconsArray = JSON.parse(iconsData);
+					} catch (e) {
+						// iconsArray = null
+					}
+				} else if (Array.isArray(iconsData)) {
+					iconsArray = iconsData;
+				}
+
+				if (Array.isArray(iconsArray)) {
+					iconsArray.forEach(function (iconData) {
+						if (iconData && typeof iconData === 'object' && iconData.type && iconData.link) {
+							var faSpecificClasses = '';
+							var srLabel = String(iconData.type).charAt(0).toUpperCase() + String(iconData.type).slice(1);
+
+							switch (String(iconData.type).toLowerCase()) {
+								case 'instagram': faSpecificClasses = 'brands fa-instagram'; srLabel = 'Instagram'; break;
+								case 'youtube': faSpecificClasses = 'brands fa-youtube'; srLabel = 'YouTube'; break;
+								case 'facebook': faSpecificClasses = 'brands fa-facebook-f'; srLabel = 'Facebook'; break;
+								case 'twitter': faSpecificClasses = 'brands fa-twitter'; srLabel = 'Twitter'; break;
+								case 'pinterest': faSpecificClasses = 'brands fa-pinterest'; srLabel = 'Pinterest'; break;
+								case 'vimeo': faSpecificClasses = 'brands fa-vimeo-v'; srLabel = 'Vimeo'; break;
+								case 'tumblr': faSpecificClasses = 'brands fa-tumblr'; srLabel = 'Tumblr'; break;
+								case 'linkedin': faSpecificClasses = 'brands fa-linkedin-in'; srLabel = 'LinkedIn'; break;
+								case 'patreon': faSpecificClasses = 'brands fa-patreon'; srLabel = 'Patreon'; break;
+								case 'ko-fi': faSpecificClasses = 'solid fa-coffee'; srLabel = 'Ko-fi'; break;
+								case 'link': faSpecificClasses = 'solid fa-link'; srLabel = 'Link'; break;
+								case 'info': faSpecificClasses = 'solid fa-info-circle'; srLabel = 'Information'; break;
+							}
+
+							if (faSpecificClasses) {
+								allIconsHtml += '<a href="' + String(iconData.link) + '" target="_blank" rel="noopener noreferrer" class="poptrox-custom-icon-link icon ' + faSpecificClasses + '">' +
+									'<span class="sr-only">' + srLabel + '</span>' +
+									'</a>';
+							}
+						}
+					});
+				}
+
+				var safeCaptionText = $('<span></span>').text(captionText).html();
+				return '<span class="poptrox-caption-text">' + safeCaptionText + '</span>' + allIconsHtml;
+			},
 
 			onPopupOpen: function () {
 				if (browser.mobile) {

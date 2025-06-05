@@ -38,15 +38,45 @@ To manually change the position of a specific slideshow image, add the `slidesho
 
 Gallery images thumbnails are auto-cropped from the full image uploaded in `/images/gallery/`. Clicking on these thumbnails will display the full-sized image.
 
-You may upload as many images as you want, but for best results, display an even number of images.
+You may upload as many images as you want, but for best results, display an **even number of images**.
+
+
+#### Gallery Art Captions
+
+Whatever text you put in the `title` attribute on the image tag will render as the image's caption. 
+
+`data-caption-icons` allows you to add custom links to each image in the gallery. This attribute is **optional**.
 
 ```html
+<!-- Image 1: A few links -->
 <article class="from-left">
-    <a href="images/gallery/YOUR_IMAGE.png" class="image fit"><img src="images/gallery/YOUR_IMAGE.png" title="This title displays as a caption under the image" alt="Add an alt text description of the image for accessibility" /></a>
+	<a href="images/gallery/IMAGE.png" class="image fit" 
+		data-caption-icons='[
+			{"type": "instagram", "link": "httpe://example.com/instagram"},
+        	{"type": "tumblr", "link": "https://example.com/tumblr"}
+		]'>
+		<img src="images/gallery/IMAGE.png" title="My caption text" alt="Accessibility description" /></a>
 </article>
 
+<!-- Image 2: All links! -->
 <article class="from-right">
-    <a href="images/gallery/YOUR_IMAGE.png" class="image fit"><img src="images/gallery/YOUR_IMAGE.png" title="My amazing artwork" alt="Description of my amazing artwork" /></a>
+    <a href="images/gallery/MY_COOL_IMAGE.png" class="image fit"
+       data-caption-icons='[
+           {"type": "instagram", "link": "https://example.com/instagram"},
+           {"type": "youtube", "link": "https://example.com/youtube"},
+           {"type": "facebook", "link": "https://example.com/facebook"},
+           {"type": "twitter", "link": "https://example.com/twitter"},
+           {"type": "pinterest", "link": "https://example.com/pinterest"},
+           {"type": "vimeo", "link": "https://example.com/vimeo"},
+           {"type": "tumblr", "link": "https://example.com/tumblr"},
+           {"type": "linkedin", "link": "https://example.com/linkedin"},
+           {"type": "ko-fi", "link": "https://example.com/ko-fi"},
+           {"type": "patreon", "link": "https://example.com/patreon"},
+           {"type": "link", "link": "https://example.com/link"},
+           {"type": "info", "link": "https://example.com/infoicon"}
+       ]'>
+       <img src="images/gallery/MY_COOL_IMAGE.png" title="All links!" alt="Accessibility description" />
+    </a>
 </article>
 ```
 

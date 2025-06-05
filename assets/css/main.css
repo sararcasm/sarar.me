@@ -2,9 +2,9 @@
 @import url("fontawesome-all.min.css");
 
 /*
-	Big Picture by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ 	Credits:
+		ajlkn @ GitHub
+		kitbur @ GitHub
 */
 
 html, body, div, span, applet, object,
@@ -1287,7 +1287,49 @@ input, select, textarea {
 			cursor: default;
 			z-index: 1;
 			font-size: 0.9em;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			box-sizing: border-box;
+			transform: translateY(-2px);
 		}
+
+			/* Caption Text */
+			.poptrox-caption-text {
+				flex-grow: 1;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				margin-right: 10px;
+			}
+
+			/* Caption social icon links */
+			.poptrox-custom-icon-link {
+				font-size: 1.2em;
+				color: #555;
+				text-decoration: none;
+				margin-left: 8px;
+				flex-shrink: 0;
+				display: inline-flex;
+				align-items: center;
+			}
+
+				.poptrox-custom-icon-link:hover {
+					color: #007bff;
+				}
+
+					a.poptrox-custom-icon-link.icon {
+						color: #555;
+						text-decoration: none;
+						margin-left: 8px;
+						flex-shrink: 0;
+						display: inline-block;
+						position: relative;
+					}
+		
+						a.poptrox-custom-icon-link.icon:hover {
+							color: #007bff;
+						}
 
 		.poptrox-popup .nav-next,
 		.poptrox-popup .nav-previous {
@@ -1402,13 +1444,6 @@ input, select, textarea {
 				overflow: auto !important;
 				touch-action: pinch-zoom !important;
 				-webkit-overflow-scrolling: touch !important;
-				/* Hide caption (when disabled in main.js) */
-				padding-bottom: 0;
-			}
-
-			/* Hide caption (when disabled in main.js) */
-			.poptrox-popup .caption {
-				display: none;
 			}
 		
 			.poptrox-popup img {
