@@ -2441,6 +2441,12 @@ input, select, textarea {
 		    line-height: 2.25em;
 		}
 
+		@media screen and (max-width: 736px) {
+			#social .icons a {
+				width: 1.75em;
+			}
+		}
+
 /* Contact */
 
 	#contact {
