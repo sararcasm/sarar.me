@@ -8,11 +8,12 @@ Most of this website's front-end functionality can be modified exclusively from 
 
 ### Slideshow Images
 
+> [!IMPORTANT]  
+> To keep the intro text readable, a **dark overlay** appears on top of the slideshow images, dimming them.
+
 File path: `/images/slideshow/`
 
 The slideshow will cycle through five images semi-randomly, prioritizing images that have not been shown recently. 
-
-HTML:
 
 ```html
 <div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_1.png"></div>
