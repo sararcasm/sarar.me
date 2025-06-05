@@ -90,7 +90,7 @@
 			overlayColor: '#1f2328',
 			overlayOpacity: 0.85,
 			usePopupDefaultStyling: false,
-			usePopupCaption: !breakpoints.active('<small'),
+			usePopupCaption: true,
 			popupLoaderText: '',
 			windowMargin: 50,
 			usePopupNav: !browser.mobile,

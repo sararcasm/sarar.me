@@ -1330,12 +1330,6 @@ input, select, textarea {
 						a.poptrox-custom-icon-link.icon:hover {
 							color: #007bff;
 						}
-			
-			@media screen and (max-width: 736px) {
-				.poptrox-popup .caption {
-					display: none !important;
-				}
-			}
 
 		.poptrox-popup .nav-next,
 		.poptrox-popup .nav-previous {
@@ -1450,13 +1444,6 @@ input, select, textarea {
 				overflow: auto !important;
 				touch-action: pinch-zoom !important;
 				-webkit-overflow-scrolling: touch !important;
-				/* Hide caption (when disabled in main.js) */
-				padding-bottom: 0;
-			}
-
-			/* Hide caption (when disabled in main.js) */
-			.poptrox-popup .caption {
-				display: none;
 			}
 		
 			.poptrox-popup img {
