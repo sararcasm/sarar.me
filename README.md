@@ -23,6 +23,17 @@ The slideshow will cycle through five images semi-randomly, prioritizing images 
 <div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE_5.png"></div>
 ```
 
+#### OPTIONAL: Positioning Slideshow Images
+
+By default, slideshow images center from the **middle** of the image and spread to fill the slideshow container. They might crop themselves in unintended ways. 
+
+To manually change the position of a specific slideshow image, add the `slideshowImagePosition` attribute to the slide's HTML. This will change the image's [`background-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) property.
+
+```html
+<div class="slide" slideshowImage="images/slideshow/YOUR_IMAGE.png" slideshowImagePosition="top center"></div>
+<div class="slide" slideshowImage="images/slideshow/ANOTHER_IMAGE.png" slideshowImagePosition="center 25%"></div>
+```
+
 ### Gallery Art
 
 Gallery images thumbnails are auto-cropped from the full image uploaded in `/images/gallery/`. Clicking on these thumbnails will display the full-sized image.
