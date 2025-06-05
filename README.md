@@ -45,20 +45,9 @@ You may upload as many images as you want, but for best results, display an **ev
 
 Whatever text you put in the `title` attribute on the image tag will render as the image's caption. 
 
-`data-caption-icons` allows you to add custom links to each image in the gallery. This attribute is **optional**.
+`data-caption-icons` allows you to add custom links to each image in the gallery. This attribute is **optional**. Below is an example that contains all of the icons you can add. 
 
 ```html
-<!-- Image 1: A few links -->
-<article class="from-left">
-	<a href="images/gallery/IMAGE.png" class="image fit" 
-		data-caption-icons='[
-			{"type": "instagram", "link": "httpe://example.com/instagram"},
-        	{"type": "tumblr", "link": "https://example.com/tumblr"}
-		]'>
-		<img src="images/gallery/IMAGE.png" title="My caption text" alt="Accessibility description" /></a>
-</article>
-
-<!-- Image 2: All links! -->
 <article class="from-right">
     <a href="images/gallery/MY_COOL_IMAGE.png" class="image fit"
        data-caption-icons='[
