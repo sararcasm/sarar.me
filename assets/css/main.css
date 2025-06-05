@@ -1931,7 +1931,7 @@ input, select, textarea {
 							background: rgba(255, 255, 255, 0.1);
 						}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 1000px) {
 
 			#header {
 				height: 2.5em;
@@ -2387,7 +2387,7 @@ input, select, textarea {
 		
 			/* Mobile gallery navigation */
 
-			@media screen and (max-width: 860px) {
+			@media screen and (max-width: 1000px) {
 			    #intro {
 			        position: relative; 
 			        min-height: 100vh;
