@@ -7,11 +7,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-html,
-body {
-	touch-action: auto !important;
-}
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -1859,7 +1854,6 @@ input, select, textarea {
 
 	#header {
 		position: absolute;
-		z-index: 10000;
 		left: 0;
 		top: 0;
 		width: 100%;
