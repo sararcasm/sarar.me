@@ -2277,11 +2277,11 @@ input, select, textarea {
 		background-repeat: repeat, no-repeat;
 	}
 
-	/* Intro Gallery */
+	/* Slideshow */
 
-		/* Gallery Container */
+		/* Slideshow Container */
 
-		#intro .gallery {
+		#intro .slideshow {
 		    position: absolute;
 		    width: 100%;
 		    height: 100%;
@@ -2325,7 +2325,7 @@ input, select, textarea {
 
 		/* Navigation */
 
-		#intro .galleryNav {
+		#intro .slideshowNav {
 		    position: absolute;
 		    right: 30px;
 		    top: 50%;
@@ -2367,9 +2367,9 @@ input, select, textarea {
 			        min-height: 100vh;
 			    }
 			
-				/* Horizontal display */
+				/* Horizontal & top display */
 
-			    #intro .galleryNav {
+			    #intro .slideshowNav {
 			        position: absolute;
 			        top: 20px;
 			        right: auto;
@@ -2385,16 +2385,16 @@ input, select, textarea {
 			
 			    /* Make navigation dots bigger */
 
-			    #intro .galleryNav .navDot {
+			    #intro .slideshowNav .navDot {
 			        width: 14px;
 			        height: 14px;
 			        margin: 0;
 			    }
 			}
 
-/* One */
+/* About Me */
 
-	#one {
+	#me {
 		background: url("images/overlay.png"), url("../../images/one.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
@@ -2402,9 +2402,9 @@ input, select, textarea {
 	}
 			
 
-/* Two */
+/* Social Media */
 
-	#two {
+	#social {
 		background: url("images/overlay.png"), url("../../images/two.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
@@ -2414,11 +2414,11 @@ input, select, textarea {
 
 	/* Two icons */
 
-		#two .icons {
+		#social .icons {
 		    text-align: center;
 		}
 
-		#two .icons a {
+		#social .icons a {
 		    font-size: 1.5em;
 		    width: 2.25em;
 		    height: 2.25em;
