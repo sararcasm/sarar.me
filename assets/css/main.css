@@ -1458,6 +1458,26 @@ input, select, textarea {
 		margin: 0 auto 2em auto;
 	}
 
+		/* Crop gallery preview images */
+
+		.gallery .image.fit {
+			display: block;
+			overflow: hidden;
+			aspect-ratio: 1 / 1;
+		}
+	
+			.gallery .image.fit img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				transition: transform 0.3s ease;
+			}
+	
+				.gallery .image.fit:hover img {
+					transform: scale(1.05);
+				}
+			
 		.gallery article {
 			-moz-transition: -moz-transform 1s ease, opacity 1s ease;
 			-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
@@ -1471,6 +1491,12 @@ input, select, textarea {
 			position: relative;
 			opacity: 1.0;
 		}
+
+			/* Optional: Remove dimmed overlay */
+			
+			.gallery article .image::before {
+				display: none !important;	
+			}
 
 			.gallery article .image {
 				margin: 0;
