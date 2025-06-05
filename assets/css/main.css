@@ -1493,7 +1493,7 @@ input, select, textarea {
 		}
 
 			/* Optional: Remove dimmed overlay */
-			
+
 			.gallery article .image::before {
 				display: none !important;	
 			}
@@ -2418,27 +2418,17 @@ input, select, textarea {
 			    }
 			}
 
-/* About Me */
+/* About Me & Social images */
 
-	#me {
-		background: url("images/overlay.png"), url("../../images/one.jpg");
-		background-size: 256px 256px, cover;
-		background-attachment: fixed, fixed;
-		background-position: top left, center center;
-	}
-			
-
-/* Social Media */
-
+	#me,
 	#social {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
-		background-size: 256px 256px, cover;
+		background: url("images/overlay.png");
+		background-size: cover;
 		background-attachment: fixed, fixed;
-		background-position: top left, center center;
-		padding-bottom: 3em;
+		background-position: center;
 	}
 
-	/* Two icons */
+	/* Social icons */
 
 		#social .icons {
 		    text-align: center;

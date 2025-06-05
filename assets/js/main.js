@@ -121,6 +121,18 @@
 	    });
 	});
 
+	// Get background images from HTML data-bg
+	$window.on('load', function () {
+		$('[data-bg]').each(function () {
+			var $this = $(this),
+				bgUrl = $this.attr('data-bg');
+
+			$this.css('background-image', 'url(' + bgUrl + ')');
+
+			$('<img/>').attr('src', bgUrl);
+		});
+	});
+
 	// Section transitions.
 		if (browser.canUse('transition')) {
 
