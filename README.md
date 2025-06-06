@@ -55,6 +55,8 @@ Whatever text you put in the `title` attribute on the image tag will render as t
            {"type": "youtube", "link": "https://example.com/youtube"},
            {"type": "facebook", "link": "https://example.com/facebook"},
            {"type": "twitter", "link": "https://example.com/twitter"},
+           {"type": "bluesky", "link": "https://example.com/bluesky"},
+           {"type": "mastodon", "link": "https://example.com/mastodon"},
            {"type": "pinterest", "link": "https://example.com/pinterest"},
            {"type": "vimeo", "link": "https://example.com/vimeo"},
            {"type": "tumblr", "link": "https://example.com/tumblr"},
@@ -99,8 +101,7 @@ These links can be changed to anything.
 
 All of the icons you add to this section will automatically populate in the website's footer, as well.
 
-By default, any icon available in Font Awesome Free 5.15.4 should work.
-
+To add more icons, use any icon from the [Font Awesome 6 Free](https://fontawesome.com/search?ic=free) library.
 
 ### Favicon 
 

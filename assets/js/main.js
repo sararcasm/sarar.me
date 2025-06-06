@@ -102,11 +102,7 @@
 				var allIconsHtml = '';
 
 				if (typeof iconsData === 'string') {
-					try {
-						iconsArray = JSON.parse(iconsData);
-					} catch (e) {
-						// iconsArray = null
-					}
+					try { iconsArray = JSON.parse(iconsData); } catch (e) { iconsArray = null; }
 				} else if (Array.isArray(iconsData)) {
 					iconsArray = iconsData;
 				}
@@ -114,26 +110,32 @@
 				if (Array.isArray(iconsArray)) {
 					iconsArray.forEach(function (iconData) {
 						if (iconData && typeof iconData === 'object' && iconData.type && iconData.link) {
-							var faSpecificClasses = '';
+							var styleClass = '';
+							var iconClass = '';
 							var srLabel = String(iconData.type).charAt(0).toUpperCase() + String(iconData.type).slice(1);
 
 							switch (String(iconData.type).toLowerCase()) {
-								case 'instagram': faSpecificClasses = 'brands fa-instagram'; srLabel = 'Instagram'; break;
-								case 'youtube': faSpecificClasses = 'brands fa-youtube'; srLabel = 'YouTube'; break;
-								case 'facebook': faSpecificClasses = 'brands fa-facebook-f'; srLabel = 'Facebook'; break;
-								case 'twitter': faSpecificClasses = 'brands fa-twitter'; srLabel = 'Twitter'; break;
-								case 'pinterest': faSpecificClasses = 'brands fa-pinterest'; srLabel = 'Pinterest'; break;
-								case 'vimeo': faSpecificClasses = 'brands fa-vimeo-v'; srLabel = 'Vimeo'; break;
-								case 'tumblr': faSpecificClasses = 'brands fa-tumblr'; srLabel = 'Tumblr'; break;
-								case 'linkedin': faSpecificClasses = 'brands fa-linkedin-in'; srLabel = 'LinkedIn'; break;
-								case 'patreon': faSpecificClasses = 'brands fa-patreon'; srLabel = 'Patreon'; break;
-								case 'ko-fi': faSpecificClasses = 'solid fa-coffee'; srLabel = 'Ko-fi'; break;
-								case 'link': faSpecificClasses = 'solid fa-link'; srLabel = 'Link'; break;
-								case 'info': faSpecificClasses = 'solid fa-info-circle'; srLabel = 'Information'; break;
+								// Brand Icons
+								case 'bluesky': styleClass = 'brands'; iconClass = 'fa-brands fa-bluesky'; srLabel = 'Bluesky'; break;
+								case 'instagram': styleClass = 'brands'; iconClass = 'fa-brands fa-instagram'; srLabel = 'Instagram'; break;
+								case 'youtube': styleClass = 'brands'; iconClass = 'fa-brands fa-youtube'; srLabel = 'YouTube'; break;
+								case 'facebook': styleClass = 'brands'; iconClass = 'fa-brands fa-facebook-f'; srLabel = 'Facebook'; break;
+								case 'twitter': styleClass = 'brands'; iconClass = 'fa-brands fa-twitter'; srLabel = 'Twitter'; break;
+								case 'pinterest': styleClass = 'brands'; iconClass = 'fa-brands fa-pinterest'; srLabel = 'Pinterest'; break;
+								case 'vimeo': styleClass = 'brands'; iconClass = 'fa-brands fa-vimeo-v'; srLabel = 'Vimeo'; break;
+								case 'tumblr': styleClass = 'brands'; iconClass = 'fa-brands fa-tumblr'; srLabel = 'Tumblr'; break;
+								case 'linkedin': styleClass = 'brands'; iconClass = 'fa-brands fa-linkedin-in'; srLabel = 'LinkedIn'; break;
+								case 'patreon': styleClass = 'brands'; iconClass = 'fa-brands fa-patreon'; srLabel = 'Patreon'; break;
+
+								// Solid Icons
+								case 'ko-fi': styleClass = 'solid'; iconClass = 'fa-solid fa-coffee'; srLabel = 'Ko-fi'; break;
+								case 'link': styleClass = 'solid'; iconClass = 'fa-solid fa-link'; srLabel = 'Link'; break;
+								case 'info': styleClass = 'solid'; iconClass = 'fa-solid fa-info-circle'; srLabel = 'Information'; break;
 							}
 
-							if (faSpecificClasses) {
-								allIconsHtml += '<a href="' + String(iconData.link) + '" target="_blank" rel="noopener noreferrer" class="poptrox-custom-icon-link icon ' + faSpecificClasses + '">' +
+							if (iconClass) {
+								allIconsHtml += '<a href="' + String(iconData.link) + '" target="_blank" rel="noopener noreferrer" class="poptrox-custom-icon-link icon ' + styleClass + '">' +
+									'<i class="' + iconClass + '"></i>' +
 									'<span class="sr-only">' + srLabel + '</span>' +
 									'</a>';
 							}
