@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
-@import url("fontawesome-all.min.css");
 
 /*
  	Credits:
@@ -2508,6 +2507,10 @@ input, select, textarea {
 		    height: 2.25em;
 		    line-height: 2.25em;
 		}
+
+			#social .icons a:hover {
+				color: #007bff;
+			}
 
 		@media screen and (max-width: 736px) {
 			#social .icons a {
